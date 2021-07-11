@@ -1,6 +1,17 @@
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import { Home } from './pages/Home';
+
+import './styles/app.scss';
+
 function App() {
   return (
-    <h1>Olá, Mundo!</h1>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        {/* <Route path='/' component={User} /> */}
+      </Switch>
+    </BrowserRouter>
   );
 }
 

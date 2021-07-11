@@ -1,0 +1,25 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--font-color: #333333;
+
+	--white-010: #FCFCFC;
+	--white-100: #E5E5E5;
+	--gray-300: #B2B2B2;
+
+	--primary-500: #C03C6C;
+}
+
+@media (max-width: 1400px) {
+	html {
+		font-size: 0.9375rem;
+	}
+}
+
+body, button, input, textarea {
+	font-family: 'IBM Plex Mono', sans-serif;
+}

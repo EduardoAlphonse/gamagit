@@ -1,7 +1,7 @@
 header.user-header {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 3rem;
+	margin: 3rem 0;
 
 	.user-info-card {
 		display: flex;
@@ -9,15 +9,9 @@ header.user-header {
 		border-radius: 0.5rem;
 		overflow: hidden;
 
-		a {
+		.container {
 			border-right: 1px solid var(--primary-500);
 			border-radius: 0;
-		}
-		
-		a:hover {
-			transform: none;
-			box-shadow: none;
-			cursor: auto;
 		}
 
 		.info {
@@ -34,6 +28,10 @@ header.user-header {
 
 				&:last-child {
 					margin-bottom: 0;
+				}
+
+				.data {
+					font-weight: 600;
 				}
 			}
 		}
@@ -70,4 +68,10 @@ header.user-header {
 			}
 		}
 	}
+}
+
+section.repositories {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 24px;
 }

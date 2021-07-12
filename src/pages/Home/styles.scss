@@ -87,6 +87,17 @@
 		@media (max-width: 1000px) {
 			grid-template-columns: repeat(4, 1fr);
 		}
+
+		a {
+			.container {
+				transition: all 0.2s;
+
+				&:hover {
+					box-shadow: 0 5px 0 var(--primary-500);
+					transform: translateY(-5px);
+				}
+			}
+		}
 	}
 }
 

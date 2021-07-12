@@ -1,20 +1,13 @@
 .container {
 	display: flex;
 	flex-direction: column;
-	min-width: 145px;
+	width: 180px;
+	height: 210px;
 
 	border-radius: 0.5rem;
 	background: var(--white-010);
-
-	cursor: pointer;
+	
 	overflow: hidden;
-
-	transition: all 0.2s;
-
-	&:hover {
-		box-shadow: 0 5px 0 var(--primary-500);
-		transform: translateY(-5px);
-	}
 	
 	header {
 		display: flex;

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom'
 
 import { UserCard } from '../../components/UserCard';
+import { RepositoryCard } from '../../components/RepositoryCard';
 
 import { api } from '../../services/githubApi';
 
@@ -17,17 +18,30 @@ type UserInfoCard = {
 	following: number;
 }
 
+type Repository = {
+	id: number;
+	name: string;
+	description: string | null;
+	updated_at: string;
+	language: string | null;
+	homepage: string | null;
+	clone_url: string;
+	html_url: string;
+}
+
 type ParamsProps = {
 	username: string;
 }
 
 export function User() {
 	const [user, setUser] = useState<UserInfoCard>({} as UserInfoCard);
+	const [repositories, setRepositories] = useState<Repository[]>([]);
 	const { username } = useParams<ParamsProps>();
 
 	useEffect(() => {
-		async function getUser() {
+		(async function getUser() {
 			const { data } = await api.get(`/users/${username}`);
+
 			const newUser: UserInfoCard = {
 				image: data.avatar_url,
 				username,
@@ -39,10 +53,28 @@ export function User() {
 			}
 
 			setUser(newUser);
-			console.log(username);
-		}
+		})();
+	}, [username]);
 
-		getUser();
+	useEffect(() => {
+		(async function getRepositories() {
+			const { data } = await api.get(`/users/${username}/repos?per_page=100&sort=updated`);
+
+			const newRepositories: Repository[] = data.map((repo: any) => {
+				return {
+					id: repo.id,
+					name: repo.name,
+					description: repo.description,
+					updated_at: repo.updated_at,
+					language: repo.language,
+					homepage: repo.homepage,
+					clone_url: repo.clone_url,
+					html_url: repo.html_url,
+				}
+			});
+
+			setRepositories(newRepositories);
+		})();
 	}, [username]);
 
 	return (
@@ -70,6 +102,22 @@ export function User() {
 						</Link>
 					</div>
 				</header>
+
+				<section className="repositories">
+					{repositories.map(repository => (
+						<RepositoryCard
+							key={repository.id}
+							name={repository.name}
+							updated_at={repository.updated_at}
+							language={repository.language}
+							html_url={repository.html_url}
+							clone_url={repository.clone_url}
+							homepage={repository.homepage}
+						>
+							{repository.description}
+						</RepositoryCard>
+					))}
+				</section>
 			</div>
 		</div>
 	)

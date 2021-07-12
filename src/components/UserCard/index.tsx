@@ -1,14 +1,28 @@
+import { useHistory, useParams } from 'react-router-dom'
 import './styles.scss'
 
-interface UserCardProps {
-	id: number;
+type UserCardProps = {
 	image: string;
+	username: string;
+	name?: string;
+}
+
+type ParamsProps = {
 	username: string;
 }
 
-export function UserCard({ id, image, username }: UserCardProps) {
+export function UserCard({ image, username }: UserCardProps) {
+	const history = useHistory();
+	const { username: user } = useParams<ParamsProps>();
+
+	function viewUser() {
+		if (!user) {
+			history.push(`/user/${username}`);
+		}
+	}
+
 	return (
-		<button className="container">
+		<button className="container" onClick={viewUser}>
 			<header>
 				<div />
 				<img src={image} alt={username} />

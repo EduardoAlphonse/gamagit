@@ -22,7 +22,7 @@ export function Home() {
 		event.preventDefault();
 
 		const { data } = await api.get(`/search/users?q=${input}`);
-		const newUsers = data.items.map((item: any) => {
+		const newUsers: UserCardType[] = data.items.map((item: any): UserCardType => {
 			return {
 				id: item.id,
 				image: item.avatar_url,

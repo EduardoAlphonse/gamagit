@@ -3,7 +3,6 @@ import './styles.scss';
 type UserCardProps = {
 	image: string;
 	username: string;
-	name?: string;
 }
 
 export function UserCard({ image, username }: UserCardProps) {

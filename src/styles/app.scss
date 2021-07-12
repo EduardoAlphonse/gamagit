@@ -1,6 +1,7 @@
 #page-container {
 	display: flex;
 	min-height: 100vh;
+	min-width: fit-content;
 	background: var(--white-100);
 	padding: 0 4rem;
 }

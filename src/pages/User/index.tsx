@@ -26,25 +26,26 @@ export function User() {
 	const { username } = useParams<ParamsProps>();
 	const history = useHistory();
 
-	async function getUser() {
-		console.log(username);
-		const { data } = await api.get(`/users/${username}`);
-		const newUser: UserInfoCard = {
-			image: data.avatar_url,
-			username,
-			name: data.name,
-			public_repos: data.public_repos,
-			public_gists: data.public_gists,
-			following: data.following,
-			followers: data.followers,
+	useEffect(() => {
+		async function getUser() {
+			console.log(username);
+			const { data } = await api.get(`/users/${username}`);
+			const newUser: UserInfoCard = {
+				image: data.avatar_url,
+				username,
+				name: data.name,
+				public_repos: data.public_repos,
+				public_gists: data.public_gists,
+				following: data.following,
+				followers: data.followers,
+			}
+
+			setUser(newUser);
+			console.log(username);
 		}
 
-		setUser(newUser);
-	}
-
-	useEffect(() => {
 		getUser();
-	}, []);
+	}, [username]);
 
 	return (
 		<div id="page-container">

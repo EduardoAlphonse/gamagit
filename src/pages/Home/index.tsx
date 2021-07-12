@@ -3,7 +3,7 @@ import { UserCard } from '../../components/UserCard';
 import { api } from '../../services/githubApi';
 import './styles.scss'
 
-type UserCard = {
+type UserCardType = {
 	id: number;
 	image: string;
 	username: string;
@@ -11,7 +11,7 @@ type UserCard = {
 
 export function Home() {
 	const [input, setInput] = useState('');
-	const [users, setUsers] = useState<UserCard[]>([]);
+	const [users, setUsers] = useState<UserCardType[]>([]);
 
 	function handleInput(event: ChangeEvent<HTMLInputElement>) {
 		setInput(event.target.value);

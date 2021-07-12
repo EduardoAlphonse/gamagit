@@ -3,7 +3,7 @@ import { UserCard } from '../../components/UserCard';
 import { api } from '../../services/githubApi';
 import './styles.scss'
 
-interface UserCardState {
+type UserCard = {
 	id: number;
 	image: string;
 	username: string;
@@ -11,7 +11,7 @@ interface UserCardState {
 
 export function Home() {
 	const [input, setInput] = useState('');
-	const [users, setUsers] = useState<UserCardState[]>([]);
+	const [users, setUsers] = useState<UserCard[]>([]);
 
 	function handleInput(event: ChangeEvent<HTMLInputElement>) {
 		setInput(event.target.value);
@@ -35,7 +35,7 @@ export function Home() {
 	return (
 		<div id='page-container'>
 			<div id='page-content'>
-				<header>
+				<header className='search-header'>
 					<div className="input">
 						<form onSubmit={searchUser}>
 							<input type='text' placeholder='github_username' onChange={handleInput} />
@@ -53,7 +53,6 @@ export function Home() {
 					<main className='user-cards-container'>
 						{users.map(user => (
 							<UserCard
-								id={user.id}
 								key={user.id}
 								image={user.image}
 								username={user.username}

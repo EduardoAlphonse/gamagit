@@ -1,5 +1,4 @@
-import { useHistory, useParams } from 'react-router-dom'
-import './styles.scss'
+import './styles.scss';
 
 type UserCardProps = {
 	image: string;
@@ -7,22 +6,9 @@ type UserCardProps = {
 	name?: string;
 }
 
-type ParamsProps = {
-	username: string;
-}
-
 export function UserCard({ image, username }: UserCardProps) {
-	const history = useHistory();
-	const { username: user } = useParams<ParamsProps>();
-
-	function viewUser() {
-		if (!user) {
-			history.push(`/user/${username}`);
-		}
-	}
-
 	return (
-		<button className="container" onClick={viewUser}>
+		<div className="container">
 			<header>
 				<div />
 				<img src={image} alt={username} />
@@ -30,6 +16,6 @@ export function UserCard({ image, username }: UserCardProps) {
 			<div className='user-info'>
 				<p className="username">{username}</p>
 			</div>
-		</button>
+		</div>
 	)
 }

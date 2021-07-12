@@ -9,12 +9,12 @@ header.user-header {
 		border-radius: 0.5rem;
 		overflow: hidden;
 
-		button {
+		a {
 			border-right: 1px solid var(--primary-500);
 			border-radius: 0;
 		}
 		
-		button:hover {
+		a:hover {
 			transform: none;
 			box-shadow: none;
 			cursor: auto;
@@ -40,7 +40,7 @@ header.user-header {
 	}
 
 	div.options {
-		button {
+		a {
 			display: flex;
 			justify-content: center;
 			align-items: center;

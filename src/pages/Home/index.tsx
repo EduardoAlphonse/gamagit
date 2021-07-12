@@ -1,4 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from 'react'
+import { Link } from 'react-router-dom';
 import { UserCard } from '../../components/UserCard';
 import { api } from '../../services/githubApi';
 import './styles.scss'
@@ -52,11 +53,15 @@ export function Home() {
 				{users.length ? (
 					<main className='user-cards-container'>
 						{users.map(user => (
-							<UserCard
+							<Link
+								to={`/user/${user.username}`}
 								key={user.id}
-								image={user.image}
-								username={user.username}
-							/>
+							>
+								<UserCard
+									image={user.image}
+									username={user.username}
+								/>
+							</Link>
 						))}
 					</main>
 				) : (

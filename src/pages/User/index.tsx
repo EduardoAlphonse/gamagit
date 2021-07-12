@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useHistory, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import { UserCard } from '../../components/UserCard';
 
@@ -24,11 +24,9 @@ type ParamsProps = {
 export function User() {
 	const [user, setUser] = useState<UserInfoCard>({} as UserInfoCard);
 	const { username } = useParams<ParamsProps>();
-	const history = useHistory();
 
 	useEffect(() => {
 		async function getUser() {
-			console.log(username);
 			const { data } = await api.get(`/users/${username}`);
 			const newUser: UserInfoCard = {
 				image: data.avatar_url,
@@ -65,11 +63,11 @@ export function User() {
 					</div>
 
 					<div className="options">
-						<button onClick={() => history.goBack()}>
+						<Link className='back-button' to='/'>
 							<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path fillRule="evenodd" clipRule="evenodd" d="M12.5101 1.79291L2.51008 11.7929V13.2071L12.5101 23.2071L13.9243 21.7929L5.6314 13.5H22.4899V11.5H5.6314L13.9243 3.20712L12.5101 1.79291Z" fill="#333333" />
 							</svg>
-						</button>
+						</Link>
 					</div>
 				</header>
 			</div>

@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/gamagit/static/css/main.a8f5e6e8.chunk.css",
-    "main.js": "/gamagit/static/js/main.f1b77572.chunk.js",
-    "main.js.map": "/gamagit/static/js/main.f1b77572.chunk.js.map",
+    "main.js": "/gamagit/static/js/main.ba618070.chunk.js",
+    "main.js.map": "/gamagit/static/js/main.ba618070.chunk.js.map",
     "runtime-main.js": "/gamagit/static/js/runtime-main.9b3cfe0c.js",
     "runtime-main.js.map": "/gamagit/static/js/runtime-main.9b3cfe0c.js.map",
     "static/js/2.94205196.chunk.js": "/gamagit/static/js/2.94205196.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.9b3cfe0c.js",
     "static/js/2.94205196.chunk.js",
     "static/css/main.a8f5e6e8.chunk.css",
-    "static/js/main.f1b77572.chunk.js"
+    "static/js/main.ba618070.chunk.js"
   ]
 }

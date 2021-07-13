@@ -1,0 +1,54 @@
+.repository-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+
+	padding: 1rem 0;
+
+	background: var(--primary-500);
+	color: var(--white-010);
+	font-weight: 600;
+	font-size: 0.875rem;
+	cursor: pointer;
+	
+	border-right: 1px solid var(--white-010);
+	
+	transition: all 0.2s;
+
+	&:last-child {
+		border-right: none;
+	}
+
+	&:hover:not(.homepage) {
+		filter: brightness(0.9);
+	}
+
+	&:active:not(.homepage) {
+		filter: brightness(0.8);
+	}
+
+	svg {
+		margin-left: 0.5rem;
+
+		path {
+			fill: var(--white-010);
+		}
+	}
+}
+
+.homepage {
+	filter: brightness(1.2) saturate(2.5);
+
+	&:hover {
+		filter: brightness(1.1) saturate(2.5);
+	}
+
+	&:active {
+		filter: brightness(1) saturate(2.5);
+	}
+}
+
+button {
+	border: none;
+}

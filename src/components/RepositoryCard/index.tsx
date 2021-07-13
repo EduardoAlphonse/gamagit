@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { RepositoryButton } from '../RepositoryButton';
 
 import './styles.scss'
 
@@ -23,6 +24,13 @@ export function RepositoryCard({
 }: RepositoryCardProps) {
 	const [year, month, day] = updated_at.slice(0, 10).split('-');
 
+	function copyCloneUrl() {
+		const inputToCopy: HTMLInputElement = document.querySelector('.input-to-copy') as HTMLInputElement;
+		inputToCopy.value = clone_url;
+		inputToCopy.select();
+		document.execCommand('copy');
+	}
+
 	return (
 		<div className='repository-card-container'>
 			<div className="body">
@@ -39,15 +47,23 @@ export function RepositoryCard({
 			</div>
 
 			<footer>
-				<button className='repository-button'>
-					View Repo
-				</button>
-				<button className='repository-button'>
-					View Repo
-				</button>
-				<button className='repository-button'>
-					View Repo
-				</button>
+				<RepositoryButton
+					title='Repo'
+					icon='visit'
+					href={html_url}
+				/>
+				<RepositoryButton
+					title='Clonar'
+					icon='copy'
+					onClick={copyCloneUrl}
+				/>
+				{homepage && (
+					<RepositoryButton
+						title='Website'
+						icon='website'
+						href={homepage}
+					/>
+				)}
 			</footer>
 		</div>
 	)

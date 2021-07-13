@@ -89,8 +89,13 @@ export function User() {
 						<div className="info">
 							<p>repositórios: <span className="data">{user.public_repos}</span></p>
 							<p>gists: <span className="data">{user.public_gists}</span></p>
-							<p>followers: <span className="data">{user.followers}</span></p>
-							<p>following: <span className="data">{user.following}</span></p>
+							<p>seguidores: <span className="data">{user.followers}</span></p>
+							<p>seguindo: <span className="data">{user.following}</span></p>
+							<p>websites:&nbsp;
+								<span className="data">
+									{repositories.filter(repository => repository.homepage).length}
+								</span>
+							</p>
 						</div>
 					</div>
 
@@ -118,6 +123,8 @@ export function User() {
 						</RepositoryCard>
 					))}
 				</section>
+
+				<input className='input-to-copy' />
 			</div>
 		</div>
 	)

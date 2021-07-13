@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/gamagit/static/css/main.668173f1.chunk.css",
-    "main.js": "/gamagit/static/js/main.9bd5b8aa.chunk.js",
-    "main.js.map": "/gamagit/static/js/main.9bd5b8aa.chunk.js.map",
+    "main.css": "/gamagit/static/css/main.a8f5e6e8.chunk.css",
+    "main.js": "/gamagit/static/js/main.0e8502af.chunk.js",
+    "main.js.map": "/gamagit/static/js/main.0e8502af.chunk.js.map",
     "runtime-main.js": "/gamagit/static/js/runtime-main.9b3cfe0c.js",
     "runtime-main.js.map": "/gamagit/static/js/runtime-main.9b3cfe0c.js.map",
     "static/js/2.94205196.chunk.js": "/gamagit/static/js/2.94205196.chunk.js",
     "static/js/2.94205196.chunk.js.map": "/gamagit/static/js/2.94205196.chunk.js.map",
     "index.html": "/gamagit/index.html",
-    "static/css/main.668173f1.chunk.css.map": "/gamagit/static/css/main.668173f1.chunk.css.map",
+    "static/css/main.a8f5e6e8.chunk.css.map": "/gamagit/static/css/main.a8f5e6e8.chunk.css.map",
     "static/js/2.94205196.chunk.js.LICENSE.txt": "/gamagit/static/js/2.94205196.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9b3cfe0c.js",
     "static/js/2.94205196.chunk.js",
-    "static/css/main.668173f1.chunk.css",
-    "static/js/main.9bd5b8aa.chunk.js"
+    "static/css/main.a8f5e6e8.chunk.css",
+    "static/js/main.0e8502af.chunk.js"
   ]
 }

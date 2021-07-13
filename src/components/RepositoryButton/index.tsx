@@ -22,12 +22,11 @@ const icons = {
 export function RepositoryButton({
 	title, href, icon, onClick
 }: RepositoryButtonProps) {
-	console.log(title);
-	console.log(icon);
 	return (
 		<>
 			{href ? (
 				<a
+					data-valor={href}
 					href={href}
 					className={`repository-button ${icon === 'website' && 'homepage'}`}
 					target='_blank'

@@ -61,13 +61,19 @@ export function User() {
 			const { data } = await api.get(`/users/${username}/repos?per_page=100&sort=updated`);
 
 			const newRepositories: Repository[] = data.map((repo: any) => {
+				const hasHomepage = !!repo.homepage;
+				console.log('hasHomepage', hasHomepage);
+				const homepage = hasHomepage && !repo.homepage.includes('http') ? `https://${repo.homepage}` : repo.homepage;
+
+				console.log('homepage', homepage);
+
 				return {
 					id: repo.id,
 					name: repo.name,
 					description: repo.description,
 					updated_at: repo.updated_at,
 					language: repo.language,
-					homepage: repo.homepage,
+					homepage,
 					clone_url: repo.clone_url,
 					html_url: repo.html_url,
 				}

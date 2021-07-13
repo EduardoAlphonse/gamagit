@@ -4,7 +4,7 @@
 	justify-content: space-between;
 	min-width: 360px;
 
-	padding: 32px 0 0 0;
+	padding: 1.5rem 0 0 0;
 	background: var(--white-010);
 	border-radius: 0.5rem;
 
@@ -12,42 +12,60 @@
 	overflow: hidden;
 
 	.body {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		justify-content: space-between;
 		padding: 0 2rem;
-	}
 
-	h2 {
-		font-size: 1.5rem;
-		line-height: 1.625rem;
-		margin-bottom: 0.5rem;
-	}
-
-	p.description {
-		font-size: 0.875rem;
-		line-height: 1.3125rem;
-		margin-bottom: 0.5rem;
-	}
-
-	p.update {
-		font-size: 0.75rem;
-		margin-bottom: 0.5rem;
+		.title-and-description {
+			h2 {
+				font-size: 1.5rem;
+				line-height: 1.625rem;
+				margin-bottom: 1rem;
+			}
 		
-		.data {
-			font-weight: 600;
+			p.description {
+				font-size: 0.875rem;
+				line-height: 1.3125rem;
+				margin-bottom: 1rem;
+				font-weight: 300;
+		
+				display: -webkit-box;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 4;
+				-webkit-box-orient: vertical;
+			}
 		}
 	}
 
-	span.tag {
-		font-weight: 600;
-		font-size: 0.75rem;
-		padding: 0.25rem 0.5rem;
-		border-radius: 0.25rem;
-		background: var(--primary-500);
-		color: var(--white-010);
-		margin-bottom: 0.5rem;
+	.last-update-and-language {
+		display: flex;
+		justify-content: space-between;
+
+		p.update {
+			font-size: 0.75rem;
+			margin-bottom: 1rem;
+			
+			.data {
+				font-weight: 500;
+			}
+		}
+	
+		span.tag {
+			font-weight: 500;
+			font-size: 0.75rem;
+			padding: 0.25rem 0.5rem;
+			border-radius: 0.25rem;
+			background: var(--primary-500);
+			color: var(--white-010);
+			margin-bottom: 0.5rem;
+		}
 	}
 
 	footer {
-		margin-top: 2rem;
+		margin-top: 0.5rem;
 		display: flex;
 	}
 }

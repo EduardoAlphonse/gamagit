@@ -7,7 +7,9 @@ import './styles/app.scss';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      basename='/gamagit'
+    >
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/user/:username' component={User} />

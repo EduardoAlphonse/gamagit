@@ -21,6 +21,8 @@ export function Home() {
 	async function searchUser(event: FormEvent) {
 		event.preventDefault();
 
+		if (input === '') return;
+
 		const { data } = await api.get(`/search/users?q=${input}`);
 		const newUsers: UserCardType[] = data.items.map((item: any): UserCardType => {
 			return {
